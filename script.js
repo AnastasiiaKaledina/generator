@@ -97,6 +97,11 @@ const runTickerAnimation = () => {
   tickerAnim = requestAnimationFrame(runTickerAnimation);
 };
 
+const selectPrize = () => {
+  const selected = 3;
+  prizeNodes[selected].classList.add(selectedClass);
+};
+
 trigger.addEventListener('click', () => {
   trigger.disabled = true;
   rotation = Math.floor(360 + spinertia(910, 910));
@@ -109,6 +114,7 @@ trigger.addEventListener('click', () => {
 
 spinner.addEventListener('transitionend', () => {
   cancelAnimationFrame(tickerAnim);
+  selectPrize();
   rotation %= 360;
   wheel.classList.remove(spinClass);
   spinner.style.setProperty('--rotate', rotation);
