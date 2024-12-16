@@ -12,6 +12,17 @@ body {
   background: #1f1f1f;
 }
 
+.kek-lol {
+  display: flex;
+  width: 800px;
+}
+
+@media (max-width: 900px) {
+  .kek-lol {
+    width: 90vw;
+  }
+}
+
 .deal-wheel {
   --size: clamp(250px, 80vmin, 500px);
   --lg-hs: 0 3%;
